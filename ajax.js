@@ -37,6 +37,34 @@ document.addEventListener("DOMContentLoaded", function() {
   request2.addEventListener('click', ajaxStep3)
 
   // step 7
-  
+  var button7 = document.querySelector('.button7');
+  button7.addEventListener('click', ajaxStep7);
+  function ajaxStep7() {
+    $.ajax({
+      url: 'http://first-ajax-api.herokuapp.com/count',
+      method: 'GET',
+      data: {},
+      dataType: 'text'
+    }).done(function (responseData) {
+      var sec7 = document.querySelector('#step7');
+      sec7.append(responseData);
+    })
+  }
 
+  // step 8
+  var button8 = document.querySelector('.button8');
+  button8.addEventListener('click', ajaxStep8);
+  function ajaxStep8() {
+    $.ajax({
+      url: 'http://first-ajax-api.herokuapp.com/time',
+      method: 'GET',
+      data: {timezone: 'Pacific/Honolulu'},
+      dataType: 'text'
+    }).done(function (responseData) {
+      var sec8 = document.querySelector('#step8');
+      sec8.append(responseData);
+    })
+  }
+
+  // step 9
 });
