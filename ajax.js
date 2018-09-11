@@ -24,9 +24,19 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log(responseData);
       var section3456 = document.querySelector('#step3456');
       section3456.append(responseData);
+      console.log('The request has been completed successfully.');
+    }).fail(function () {
+      var section3456 = document.querySelector('#step3456');
+      section3456.append("This request failed, I'll try harder next time!");
+      console.log('The request has failed');
+    }).always(function () {
+      console.log('The request has been finished');
     });
   }
   var request2 = document.querySelector('.button3456');
   request2.addEventListener('click', ajaxStep3)
+
+  // step 7
+  
 
 });
