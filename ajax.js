@@ -76,9 +76,8 @@ document.addEventListener("DOMContentLoaded", function() {
       data: {},
       dataType: 'html'
     }).done(function (responseData) {
-      // var carList = document.getElementById('cars');
-      // carList.append(responseData);
-      $("#cars").append(responseData);
+      var carList = document.getElementById('cars');
+      carList.innerHTML += responseData;
     })
   }
 });
